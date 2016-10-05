@@ -15,11 +15,10 @@ SELECT
 FROM
    babynames.names_2014 x
 JOIN
-   babynames.names_2014 y ON ( 1=1)
+   babynames.names_2014 y ON ( x.name<>y.name)
 WHERE
-  x.gender = 'F'
-  AND y.gender='F'
+  x.gender = 'F' and x.count >= 100
+  AND y.gender='F' and y.count >= 100
 ORDER BY
   scr DESC;
  
- //https://bigquery.cloud.google.com:443/savedquery/470771908106:101aff26b41948d0b90b50f6f2651698
